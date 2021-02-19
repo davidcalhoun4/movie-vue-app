@@ -4,10 +4,10 @@
     <p>Year: {{ movie.year }}</p>
     <p>Director: {{ movie.director }}</p>
     <p>Plot: {{ movie.plot }}</p>
-    <router-link :to="`/views/movies/${movie.id}/edit`"
-      ><button>Edit</button></router-link
-    >
-    <button v-on:click="destroyRecipe()">Destroy</button>
+    <router-link :to="`/views/movies/${movie.id}/edit`">
+    <button>Edit</button>
+    </router-link>
+    <button v-on:click="destroyRecipe()">Delete</button>
   </div>
 </template>
 
@@ -29,9 +29,7 @@ export default {
   },
   methods: {
     destroyRecipe: function () {
-      // true when the user hits ok
-      // false when the user hits cancel
-      if (confirm("Are you sure you want to delete this recipe?")) {
+      if (confirm("Are you sure you want to delete this movie?")) {
         axios.delete(`/api/movies/${this.movie.id}`).then((response) => {
           console.log(response.data);
           this.$router.push("/views/movies/index");

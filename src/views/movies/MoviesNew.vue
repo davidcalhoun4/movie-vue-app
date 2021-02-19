@@ -25,11 +25,18 @@
         <label>Plot:</label>
         <input type="text" class="form-control" v-model="plot" />
       </div>
-    
       <input type="submit" class="btn btn-primary" value="Submit">
+      <small v-if="plot.length > 100" class="red-text"> Plot cannot exceed 100 characters 
+      </small>
     </form>
   </div>
 </template>
+
+<style scoped>
+.red-text {
+  color: red;
+}
+</style>
 
 <script>
 import axios from "axios";
