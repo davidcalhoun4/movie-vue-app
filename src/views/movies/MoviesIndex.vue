@@ -16,15 +16,28 @@
       </datalist>
     </div>
     <div v-for="movie in movies" v-bind:key="movie.id">
-      <router-link :to="`/views/movies/${movie.id}`">
-        <h2>{{ movie.title }}</h2>
-      </router-link>
-      <router-link :to="`/movies/${movie.id}`">
-        <img v-bind:src="movie.image_url" alt="" />
-      </router-link>
-      <p><strong>Year:</strong> {{ movie.year }}</p>
-      <p><strong>Director:</strong> {{ movie.director }}</p>
-      <p><strong>Plot:</strong> {{ movie.plot }}</p>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card">
+            <img
+              src="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1517845732/1517845731.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">{{ movie.plot }}</p>
+              <p class="card-text">Director: {{ movie.director }}</p>
+              <p class="card-text">Released: {{ movie.year }}</p>
+              <router-link
+                class="btn btn-primary"
+                :to="`/views/movies/${movie.id}`"
+                >See movie</router-link
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -10,7 +10,7 @@
       </ul>
 
       <div class="form-group">
-        <label>Title:</label> 
+        <label>Title:</label>
         <input type="text" class="form-control" v-model="title" />
       </div>
       <div class="form-group">
@@ -25,8 +25,9 @@
         <label>Plot:</label>
         <input type="text" class="form-control" v-model="plot" />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-      <small v-if="plot.length > 100" class="red-text"> Plot cannot exceed 100 characters 
+      <input type="submit" class="btn btn-primary" value="Submit" />
+      <small v-if="plot.length > 100" class="red-text">
+        Plot cannot exceed 100 characters
       </small>
     </form>
   </div>
@@ -42,7 +43,7 @@
 import axios from "axios";
 
 export default {
-  data: function () {
+  data: function() {
     return {
       title: "",
       year: "",
@@ -52,7 +53,7 @@ export default {
     };
   },
   methods: {
-    createMovie: function () {
+    createMovie: function() {
       var params = {
         title: this.title,
         year: this.year,
