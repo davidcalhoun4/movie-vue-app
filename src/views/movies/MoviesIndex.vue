@@ -2,7 +2,7 @@
   <div class="movies-index">
     <div>
       <div>
-        <button v-on:click="sortAttribute = 'title'">
+        <button v-on:click="sortAttribute = 'year'">
           Sort by title
         </button>
       </div>
@@ -22,9 +22,9 @@
       <router-link :to="`/movies/${movie.id}`">
         <img v-bind:src="movie.image_url" alt="" />
       </router-link>
-      <p>Year: {{ movie.year }}</p>
-      <p>Director: {{ movie.director }}</p>
-      <p>Plot: {{ movie.plot }}</p>
+      <p><strong>Year:</strong> {{ movie.year }}</p>
+      <p><strong>Director:</strong> {{ movie.director }}</p>
+      <p><strong>Plot:</strong> {{ movie.plot }}</p>
     </div>
   </div>
 </template>
