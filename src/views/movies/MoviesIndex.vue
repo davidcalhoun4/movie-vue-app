@@ -1,8 +1,16 @@
 <template>
   <div class="movies-index">
     <div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Movies Index</h1>
+          <p class="lead">
+            Check out our selection of movies below!
+          </p>
+        </div>
+      </div>
       <div>
-        <button v-on:click="sortAttribute = 'year'">
+        <button v-on:click="sortAttribute = 'title'" class="btn btn-secondary">
           Sort by title
         </button>
       </div>
@@ -54,7 +62,7 @@ export default {
     return {
       movies: [],
       titleFilter: "",
-      orderAttribute: "title",
+      sortAttribute: "title",
     };
   },
   created: function() {
