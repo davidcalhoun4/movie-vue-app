@@ -1,38 +1,15 @@
 <template>
   <div class="home">
-    <div>
-      Title:
-      <input type="text" v-model="movieTitle" />
-      <br />
-      Year:
-      <input type="text" v-model="movieYear" />
-      <br />
-      Director:
-      <input type="text" v-model="movieDirector" />
-      <br />
-      Plot:
-      <input type="text" v-model="moviePlot" />
-      <br />
-      <button v-on:click="createMovie">Create Movie</button>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container" align="center">
+        <h1 class="display-4">Welcome to Movies</h1>
+        <p class="lead">
+          ..
+        </p>
+      </div>
     </div>
-
-    <h1>{{ message }}</h1>
-    <div v-for="movie in movies" v-bind:key="movie.id">
-      <h2>
-        <u>{{ movie.title }}</u>
-      </h2>
-      <p>
-        <b>Released:</b>
-        {{ movie.year }}
-      </p>
-      <p>
-        <b>Director:</b>
-        {{ movie.director }}
-      </p>
-      <p>
-        <b>Plot:</b>
-        {{ movie.plot }}
-      </p>
+    <div align="center">
+      <img src="https://media.timeout.com/images/101713011/630/472/image.jpg" alt="" />
     </div>
   </div>
 </template>
@@ -45,14 +22,7 @@ import axios from "axios";
 
 export default {
   data: function() {
-    return {
-      message: "Movies:",
-      movies: [],
-      movieTitle: "",
-      movieYear: "",
-      movieDirector: "",
-      moviePlot: "",
-    };
+    return {};
   },
   created: function() {
     this.indexMovies();
