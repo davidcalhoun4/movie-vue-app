@@ -1,13 +1,17 @@
 <template>
   <div class="home">
     <div>
-      Title: <input type="text" v-model="movieTitle" />
+      Title:
+      <input type="text" v-model="movieTitle" />
       <br />
-      Year: <input type="text" v-model="movieYear" />
+      Year:
+      <input type="text" v-model="movieYear" />
       <br />
-      Director: <input type="text" v-model="movieDirector" />
+      Director:
+      <input type="text" v-model="movieDirector" />
       <br />
-      Plot: <input type="text" v-model="moviePlot" />
+      Plot:
+      <input type="text" v-model="moviePlot" />
       <br />
       <button v-on:click="createMovie">Create Movie</button>
     </div>
@@ -15,11 +19,20 @@
     <h1>{{ message }}</h1>
     <div v-for="movie in movies" v-bind:key="movie.id">
       <h2>
-        <u> {{ movie.title }} </u>
+        <u>{{ movie.title }}</u>
       </h2>
-      <p><b> Released: </b> {{ movie.year }}</p>
-      <p><b> Director: </b> {{ movie.director }}</p>
-      <p><b> Plot: </b> {{ movie.plot }}</p>
+      <p>
+        <b>Released:</b>
+        {{ movie.year }}
+      </p>
+      <p>
+        <b>Director:</b>
+        {{ movie.director }}
+      </p>
+      <p>
+        <b>Plot:</b>
+        {{ movie.plot }}
+      </p>
     </div>
   </div>
 </template>
@@ -46,7 +59,7 @@ export default {
   },
   methods: {
     indexMovies: function() {
-      axios.get("/api/movies").then((response) => {
+      axios.get("/api/movies").then(response => {
         console.log(response.data);
         this.movies = response.data;
       });
@@ -64,10 +77,10 @@ export default {
             Authorization: "Bearer jwt",
           },
         })
-        .then((response) => {
+        .then(response => {
           this.movies.push(response.data);
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error.response.data);
         });
     },

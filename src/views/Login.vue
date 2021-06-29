@@ -7,18 +7,29 @@
           {{ error }}
         </li>
       </ul>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email" />
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="email" />
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
       </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password" />
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit" />
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </template>
+
+<style>
+.mb-3 {
+  width: 50%;
+}
+
+.login {
+  margin-top: 20px;
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -39,14 +50,13 @@ export default {
       };
       axios
         .post("/api/sessions", params)
-        .then((response) => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
+        .then(response => {
+          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           this.$router.push("/views/movies/index");
           console.log("loggin in");
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error.response);
           this.errors = ["Invalid email or password."];
           this.email = "";
