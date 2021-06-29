@@ -7,32 +7,38 @@
           {{ error }}
         </li>
       </ul>
-      <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="name">
+      <div class="mb-3">
+        <label for="exampleInputname1" class="form-label">Name</label>
+        <input type="name" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" v-model="name" />
       </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="email" />
       </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" />
       </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
+        <input type="password" class="form-control" id="exampleInputPassword2" v-model="passwordConfirmation" />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </template>
+
+<style>
+.signup {
+  margin-top: 20px;
+}
+</style>
 
 <script>
 import axios from "axios";
 
 export default {
-  data: function () {
+  data: function() {
     return {
       name: "",
       email: "",
@@ -42,7 +48,7 @@ export default {
     };
   },
   methods: {
-    submit: function () {
+    submit: function() {
       var params = {
         name: this.name,
         email: this.email,
@@ -51,11 +57,11 @@ export default {
       };
       axios
         .post("/api/users", params)
-        .then((response) => {
+        .then(response => {
           console.log(response.data);
           this.$router.push("/login");
         })
-        .catch((error) => {
+        .catch(error => {
           this.errors = error.response.data.errors;
         });
     },
