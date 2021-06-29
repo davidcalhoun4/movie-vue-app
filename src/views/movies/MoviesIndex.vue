@@ -2,29 +2,27 @@
   <div class="movies-index">
     <div>
       <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+        <div class="container" align="center">
           <h1 class="display-4">Movies Index</h1>
           <p class="lead">
             Check out our selection of movies below!
           </p>
         </div>
       </div>
-      <div>
-        <button v-on:click="sortAttribute = 'title'" class="btn btn-secondary">
-          Sort by title
-        </button>
+    </div>
+    <div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Search Movies by Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="i.e. Paris is Burning"
+          v-model="filter"
+        />
       </div>
-    </div>
-    <div>
-      Search by title:
-      <input type="text" v-model="titleFilter" list="titles" />
-      <datalist id="titles">
-        <option v-for="movie in movies" v-bind:key="movie.id">{{ movie.title }}</option>
-      </datalist>
-    </div>
-    <div>
       <div class="row row-cols-1 row-cols-md-3">
-        <div v-for="movie in movies" v-bind:key="movie.id" class="col mb-4">
+        <div v-for="movie in filterBy(movies, filter, 'title')" v-bind:key="movie.id" class="col mb-4">
           <div class="card">
             <img
               src="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1517845732/1517845731.jpg"
@@ -56,7 +54,7 @@ export default {
   data: function() {
     return {
       movies: [],
-      titleFilter: "",
+      filter: "",
       sortAttribute: "title",
     };
   },
