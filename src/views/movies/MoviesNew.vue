@@ -62,11 +62,11 @@ export default {
       };
       axios
         .post("/api/movies", params)
-        .then((response) => {
+        .then(response => {
           console.log(response.data);
           this.$router.push("/views/movies/index");
         })
-        .catch((error) => {
+        .catch(error => {
           this.errors = error.response.data.errors;
         });
     },
