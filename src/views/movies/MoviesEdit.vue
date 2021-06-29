@@ -22,9 +22,8 @@
       </div>
       <div class="mb-3">
         <label class="form-label">Plot</label>
-        <input type="text" class="form-control" id="plot" aria-describedby="nameHelp" v-model="movie.plot" />
+        <textarea rows="5" class="form-control" id="plot" aria-describedby="nameHelp" v-model="movie.plot"></textarea>
       </div>
-
       <input type="submit" class="btn btn-primary" value="Update" />
     </form>
   </div>
