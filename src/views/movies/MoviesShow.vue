@@ -15,7 +15,12 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.movies-show {
+  margin-top: 20px;
+  text-align: center;
+}
+</style>
 
 <script>
 import axios from "axios";
