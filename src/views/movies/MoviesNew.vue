@@ -2,33 +2,32 @@
   <div class="movies-new">
     <form v-on:submit.prevent="createMovie()">
       <h1>New Movie</h1>
-
       <ul>
         <li class="text-danger" v-for="error in errors" v-bind:key="error">
           {{ error }}
         </li>
       </ul>
 
-      <div class="form-group">
-        <label>Title:</label>
-        <input type="text" class="form-control" v-model="title" />
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" aria-describedby="nameHelp" v-model="title" />
       </div>
-      <div class="form-group">
-        <label>Year:</label>
-        <input type="text" class="form-control" v-model="year" />
+      <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input type="text" class="form-control" id="year" aria-describedby="nameHelp" v-model="year" />
       </div>
-      <div class="form-group">
-        <label>Director:</label>
-        <input type="text" class="form-control" v-model="director" />
+      <div class="mb-3">
+        <label class="form-label">Director</label>
+        <input type="text" class="form-control" id="director" aria-describedby="nameHelp" v-model="director" />
       </div>
-      <div class="form-group">
-        <label>Plot:</label>
-        <input type="text" class="form-control" v-model="plot" />
+      <div class="mb-3">
+        <label class="form-label">Plot</label>
+        <textarea rows="5" class="form-control" id="plot" aria-describedby="nameHelp" v-model="plot">Hello</textarea>
+        <small v-if="plot.length < 30" class="red-text">
+          Plot must be more than 30 characters
+        </small>
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit" />
-      <small v-if="plot.length > 100" class="red-text">
-        Plot cannot exceed 100 characters
-      </small>
+      <input type="submit" class="btn btn-primary" value="Create" />
     </form>
   </div>
 </template>
@@ -36,6 +35,10 @@
 <style scoped>
 .red-text {
   color: red;
+}
+
+.movies-new {
+  margin-top: 20px;
 }
 </style>
 
