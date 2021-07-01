@@ -11,6 +11,12 @@
         <span v-if="index < movie.actors.length - 1">,</span>
       </span>
     </p>
+    <p v-if="movie.genres.length > 0">
+      <span v-for="(genre, index) in movie.genres" :key="genre.name">
+        Genre: {{ genre }}
+        <span v-if="index < movie.genres.length - 1">-</span>
+      </span>
+    </p>
     <p>Plot: {{ movie.plot }}</p>
     <div class="top-buttons" v-if="this.$parent.isLoggedIn()">
       <router-link :to="`/views/movies/${movie.id}/edit`">
