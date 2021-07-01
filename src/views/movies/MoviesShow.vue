@@ -2,6 +2,7 @@
   <div class="movies-show">
     <h1>{{ movie.title }}</h1>
     <p>Year: {{ movie.year }}</p>
+    <img :src="movie.image" class="img-fluid" alt="..." />
     <p>Director: {{ movie.director }}</p>
     <p>Plot: {{ movie.plot }}</p>
     <div class="top-buttons" v-if="this.$parent.isLoggedIn()">
@@ -19,6 +20,11 @@
 .movies-show {
   margin-top: 20px;
   text-align: center;
+}
+
+.img-fluid {
+  max-width: 50%;
+  margin-bottom: 20px;
 }
 </style>
 

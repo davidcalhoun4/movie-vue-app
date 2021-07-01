@@ -4,9 +4,7 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container" align="center">
           <h1 class="display-4">Movies Index</h1>
-          <p class="lead">
-            Check out our selection of movies below!
-          </p>
+          <p class="lead">browse queer classics below</p>
         </div>
       </div>
     </div>
@@ -24,11 +22,7 @@
       <div class="row row-cols-1 row-cols-md-3">
         <div v-for="movie in filterBy(movies, filter, 'title')" v-bind:key="movie.id" class="col mb-4">
           <div class="card">
-            <img
-              src="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1517845732/1517845731.jpg"
-              class="card-img-top"
-              alt="..."
-            />
+            <img :src="movie.image" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">{{ movie.title }}</h5>
               <p class="card-text">{{ movie.plot }}</p>
