@@ -28,6 +28,13 @@
               <p class="card-text">{{ movie.plot }}</p>
               <p class="card-text">Director: {{ movie.director }}</p>
               <p class="card-text">Released: {{ movie.year }}</p>
+              <!-- <p class="card-text" v-for="genre in movie.genres" :key="genre.name">{{ genre }}</p> -->
+              <p v-if="movie.genres.length > 0">
+                <span v-for="(genre, index) in movie.genres" :key="genre.name">
+                  {{ genre }}
+                  <span v-if="index < movie.genres.length - 1">-</span>
+                </span>
+              </p>
               <router-link class="btn btn-primary" :to="`/views/movies/${movie.id}`">See movie</router-link>
             </div>
           </div>

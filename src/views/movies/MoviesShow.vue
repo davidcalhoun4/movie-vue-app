@@ -1,9 +1,16 @@
 <template>
   <div class="movies-show">
     <h1>{{ movie.title }}</h1>
-    <p>Year: {{ movie.year }}</p>
+    <p>Released: {{ movie.year }}</p>
     <img :src="movie.image" class="img-fluid" alt="..." />
     <p>Director: {{ movie.director }}</p>
+    <p v-if="movie.actors.length > 0">
+      Leading Role Played By:
+      <span v-for="(actor, index) in movie.actors" :key="actor.id">
+        {{ actor.first_name }} {{ actor.last_name }}
+        <span v-if="index < movie.actors.length - 1">,</span>
+      </span>
+    </p>
     <p>Plot: {{ movie.plot }}</p>
     <div class="top-buttons" v-if="this.$parent.isLoggedIn()">
       <router-link :to="`/views/movies/${movie.id}/edit`">
