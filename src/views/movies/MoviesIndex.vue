@@ -18,12 +18,17 @@
           placeholder="i.e. Paris is Burning"
           v-model="searchTerm"
         />
-        <br />
-        <button type="button" class="btn btn-secondary" v-on:click="setSortAttribute('year')">
+      </div>
+
+      <div class="d-grid gap-2 d-md-block">
+        <button type="button" class="btn btn-outline-secondary" v-on:click="setSortAttribute('year')">
           Sort by Year Released
         </button>
-        <button type="button" class="btn btn-secondary" v-on:click="setSortAttribute('title')">Sort by Title</button>
+        <button type="button" class="btn btn-outline-secondary" v-on:click="setSortAttribute('title')">
+          Sort by Title
+        </button>
       </div>
+      <br />
       <div class="row row-cols-1 row-cols-md-3">
         <div
           v-for="movie in filterBy(orderBy(movies, sortAttribute, sortOder), searchTerm, 'title')"
@@ -51,7 +56,7 @@
                   <span v-if="index < movie.genres.length - 1">-</span>
                 </span>
               </p>
-              <router-link class="btn btn-primary" :to="`/views/movies/${movie.id}`">View Movie</router-link>
+              <router-link class="btn btn-outline-primary" :to="`/views/movies/${movie.id}`">View Movie</router-link>
             </div>
           </div>
         </div>
@@ -60,7 +65,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+/* .btn btn-secondary {
+  margin-right: 20px;
+} */
+</style>
 
 <script>
 import axios from "axios";

@@ -23,7 +23,7 @@
         <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
         <input type="password" class="form-control" id="exampleInputPassword2" v-model="passwordConfirmation" />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
     </form>
   </div>
 </template>

@@ -27,7 +27,7 @@
           Plot must be more than 30 characters
         </small>
       </div>
-      <input type="submit" class="btn btn-primary" value="Create" />
+      <input type="submit" class="btn btn-outline-primary" value="Create" />
     </form>
   </div>
 </template>

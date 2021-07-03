@@ -16,10 +16,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <router-link class="nav-link" to="/views/movies/index">Movies Index</router-link>
+            <router-link class="nav-link" to="/views/movies/index">Movie Index</router-link>
             <router-link class="nav-link" v-if="isLoggedIn()" to="/views/movies/new">Create Movie</router-link>
-            <router-link class="nav-link" v-if="!isLoggedIn()" to="/signup">Signup</router-link>
-            <router-link class="nav-link" v-if="!isLoggedIn()" to="/login">Login</router-link>
+            <router-link class="nav-link" v-if="!isLoggedIn()" to="/signup">- Signup -</router-link>
+            <router-link class="nav-link" v-if="!isLoggedIn()" to="/login">- Login -</router-link>
             <router-link class="nav-link" v-if="isLoggedIn()" to="/logout">- Logout -</router-link>
           </div>
         </div>

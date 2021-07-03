@@ -30,9 +30,9 @@
     </p>
     <div class="top-buttons" v-if="this.$parent.isLoggedIn()">
       <router-link :to="`/views/movies/${movie.id}/edit`">
-        <button class="btn btn-success">Edit Movie</button>
+        <button class="btn btn-outline-success">Edit Movie</button>
       </router-link>
-      <button class="btn btn-danger ml-3" v-on:click="destroyMovie()">
+      <button class="btn btn-outline-danger" v-on:click="destroyMovie()">
         Delete Movie
       </button>
     </div>
