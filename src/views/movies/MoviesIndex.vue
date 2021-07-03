@@ -4,7 +4,6 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container" align="center">
           <h6 class="display-4">Browse Queer Classics</h6>
-          <p class="lead"></p>
         </div>
       </div>
     </div>
