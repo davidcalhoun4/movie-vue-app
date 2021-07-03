@@ -62,7 +62,7 @@ export default {
         .patch(`/api/movies/${this.movie.id}`, params)
         .then(response => {
           console.log(response.data);
-          this.$router.push(`/views/movies/${this.movie.id}`);
+          this.$router.push(`/movies/${this.movie.id}`);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

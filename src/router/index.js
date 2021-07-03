@@ -41,22 +41,22 @@ const routes = [
     component: Logout,
   },
   {
-    path: "/views/movies/index",
+    path: "/movies/index",
     name: "movies-index",
     component: MoviesIndex,
   },
   {
-    path: "/views/movies/new",
+    path: "/movies/new",
     name: "movies-new",
     component: MoviesNew,
   },
   {
-    path: "/views/movies/:id",
+    path: "/movies/:id",
     name: "movies-show",
     component: MoviesShow,
   },
   {
-    path: "/views/movies/:id/edit",
+    path: "/movies/:id/edit",
     name: "movies-edit",
     component: MoivesEdit,
   },

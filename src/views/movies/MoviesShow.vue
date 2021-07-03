@@ -29,7 +29,7 @@
       {{ movie.plot }}
     </p>
     <div class="top-buttons" v-if="this.$parent.isLoggedIn()">
-      <router-link :to="`/views/movies/${movie.id}/edit`">
+      <router-link :to="`/movies/${movie.id}/edit`">
         <button class="btn btn-outline-success">Edit Movie</button>
       </router-link>
       <button class="btn btn-outline-danger" v-on:click="destroyMovie()">
@@ -70,7 +70,7 @@ export default {
       if (confirm("Are you sure you want to delete this movie?")) {
         axios.delete(`/api/movies/${this.movie.id}`).then(response => {
           console.log(response.data);
-          this.$router.push("/views/movies/index");
+          this.$router.push("/movies/index");
         });
       }
     },

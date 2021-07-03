@@ -67,7 +67,7 @@ export default {
         .post("/api/movies", params)
         .then(response => {
           console.log(response.data);
-          this.$router.push("/views/movies/index");
+          this.$router.push("/movies/index");
         })
         .catch(error => {
           this.errors = error.response.data.errors;

@@ -90,7 +90,7 @@
                 <span v-if="index < movie.genres.length - 1">-</span>
               </span>
             </p>
-            <router-link class="btn btn-outline-primary" :to="`/views/movies/${movie.id}`">View Movie</router-link>
+            <router-link class="btn btn-outline-primary" :to="`/movies/${movie.id}`">View Movie</router-link>
           </div>
         </div>
       </div>
