@@ -3,7 +3,7 @@
     <div>
       <div class="jumbotron jumbotron-fluid">
         <div class="container" align="center">
-          <h1 class="display-4">Movies Index</h1>
+          <h1 class="display-4">Movie Index</h1>
           <p class="lead">browse queer classics below</p>
         </div>
       </div>

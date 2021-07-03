@@ -1,11 +1,17 @@
 <template>
   <div class="movies-show">
     <h1>{{ movie.title }}</h1>
-    <p>Released: {{ movie.year }}</p>
+    <p>
+      <strong>Released:</strong>
+      {{ movie.year }}
+    </p>
     <img :src="movie.image" class="img-fluid" alt="..." />
-    <p>Director: {{ movie.director }}</p>
+    <p>
+      <strong>Director:</strong>
+      {{ movie.director }}
+    </p>
     <p v-if="movie.actors.length > 0">
-      Leading Role Played By:
+      <strong>Leading Role Played By:</strong>
       <span v-for="(actor, index) in movie.actors" :key="actor.id">
         {{ actor.first_name }} {{ actor.last_name }}
         <span v-if="index < movie.actors.length - 1">,</span>
@@ -13,11 +19,15 @@
     </p>
     <p v-if="movie.genres.length > 0">
       <span v-for="(genre, index) in movie.genres" :key="genre.name">
-        Genre: {{ genre }}
+        <strong>Genre:</strong>
+        {{ genre }}
         <span v-if="index < movie.genres.length - 1">-</span>
       </span>
     </p>
-    <p>Plot: {{ movie.plot }}</p>
+    <p>
+      <strong>Plot:</strong>
+      {{ movie.plot }}
+    </p>
     <div class="top-buttons" v-if="this.$parent.isLoggedIn()">
       <router-link :to="`/views/movies/${movie.id}/edit`">
         <button class="btn btn-success">Edit Movie</button>

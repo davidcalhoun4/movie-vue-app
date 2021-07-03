@@ -2,11 +2,11 @@
   <div class="home">
     <div class="jumbotron jumbotron-fluid">
       <div class="container" align="center">
-        <h1 class="display-4">Welcome to Queer Movies</h1>
+        <h1 class="display-4">Welcome to Queer Flix</h1>
         <p class="lead">
-          Stories of Queer Filmmakers are often overlooked and unrepresented
+          Queer films are often overlooked and unrepresented in main stream media
           <br />
-          Lets watch and celebrate their stories and bravery
+          Lets watch these stories and celebrate the bravery of the characters we witness
         </p>
       </div>
     </div>
