@@ -3,13 +3,13 @@
     <div>
       <div class="jumbotron jumbotron-fluid">
         <div class="container" align="center">
-          <h1 class="display-4">Movie Index</h1>
-          <p class="lead">browse queer classics below</p>
+          <h6 class="display-4">Browse Queer Classics</h6>
+          <p class="lead"></p>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="row ">
+      <div class="row justify-content-md-center">
         <div class="col-md-auto">
           <!-- <div class="mb-3"> -->
           <!-- <label for="exampleFormControlInput1" class="form-label">Search Movies by Title</label> -->
