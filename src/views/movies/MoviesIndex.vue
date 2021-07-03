@@ -8,56 +8,64 @@
         </div>
       </div>
     </div>
-    <div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Search Movies by Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="exampleFormControlInput1"
-          placeholder="i.e. Paris is Burning"
-          v-model="searchTerm"
-        />
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-auto">
+          <!-- <div class="mb-3"> -->
+          <!-- <label for="exampleFormControlInput1" class="form-label">Search Movies by Title</label> -->
+          <br />
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Search by Title"
+            v-model="searchTerm"
+          />
+          <!-- </div> -->
+        </div>
+        <div class="col-md-auto">
+          <br />
+          <button type="button" class="btn btn-outline-secondary" v-on:click="setSortAttribute('title')">
+            Sort by Title
+          </button>
+        </div>
+        <div class="col-md-auto">
+          <br />
+          <button type="button" class="btn btn-outline-secondary" v-on:click="setSortAttribute('year')">
+            Sort by Year Released
+          </button>
+        </div>
       </div>
-
-      <div class="d-grid gap-2 d-md-block">
-        <button type="button" class="btn btn-outline-secondary" v-on:click="setSortAttribute('year')">
-          Sort by Year Released
-        </button>
-        <button type="button" class="btn btn-outline-secondary" v-on:click="setSortAttribute('title')">
-          Sort by Title
-        </button>
-      </div>
-      <br />
-      <div class="row row-cols-1 row-cols-md-3">
-        <div
-          v-for="movie in filterBy(orderBy(movies, sortAttribute, sortOder), searchTerm, 'title')"
-          v-bind:key="movie.id"
-          class="col mb-4"
-        >
-          <div class="card">
-            <img :src="movie.image" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">{{ movie.title }}</h5>
-              <p class="card-text">{{ movie.plot }}</p>
-              <p class="card-text">
-                <strong>Director:</strong>
-                {{ movie.director }}
-              </p>
-              <p class="card-text">
-                <strong>Released:</strong>
-                {{ movie.year }}
-              </p>
-              <!-- <p class="card-text" v-for="genre in movie.genres" :key="genre.name">{{ genre }}</p> -->
-              <p v-if="movie.genres.length > 0">
-                <strong>Genre:</strong>
-                <span v-for="(genre, index) in movie.genres" :key="genre.name">
-                  {{ genre }}
-                  <span v-if="index < movie.genres.length - 1">-</span>
-                </span>
-              </p>
-              <router-link class="btn btn-outline-primary" :to="`/views/movies/${movie.id}`">View Movie</router-link>
-            </div>
+    </div>
+    <hr />
+    <div class="row row-cols-1 row-cols-md-3">
+      <div
+        v-for="movie in filterBy(orderBy(movies, sortAttribute, sortOder), searchTerm, 'title')"
+        v-bind:key="movie.id"
+        class="col mb-4"
+      >
+        <div class="card">
+          <img :src="movie.image" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">{{ movie.plot }}</p>
+            <p class="card-text">
+              <strong>Director:</strong>
+              {{ movie.director }}
+            </p>
+            <p class="card-text">
+              <strong>Released:</strong>
+              {{ movie.year }}
+            </p>
+            <!-- <p class="card-text" v-for="genre in movie.genres" :key="genre.name">{{ genre }}</p> -->
+            <p v-if="movie.genres.length > 0">
+              <strong>Genre:</strong>
+              <span v-for="(genre, index) in movie.genres" :key="genre.name">
+                {{ genre }}
+                <span v-if="index < movie.genres.length - 1">-</span>
+              </span>
+            </p>
+            <router-link class="btn btn-outline-primary" :to="`/views/movies/${movie.id}`">View Movie</router-link>
           </div>
         </div>
       </div>
