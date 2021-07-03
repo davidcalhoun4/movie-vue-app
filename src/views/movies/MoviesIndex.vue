@@ -47,7 +47,9 @@
           <img :src="movie.image" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">{{ movie.title }}</h5>
-            <p class="card-text">{{ movie.plot }}</p>
+            <p class="card-text">
+              <span class="text">{{ movie.plot }}</span>
+            </p>
             <p class="card-text">
               <strong>Director:</strong>
               {{ movie.director }}
@@ -76,6 +78,12 @@
 /* .btn btn-secondary {
   margin-right: 20px;
 } */
+.text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 </style>
 
 <script>
