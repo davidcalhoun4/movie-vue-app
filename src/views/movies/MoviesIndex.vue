@@ -16,21 +16,36 @@
           class="form-control"
           id="exampleFormControlInput1"
           placeholder="i.e. Paris is Burning"
-          v-model="filter"
+          v-model="searchTerm"
         />
+        <br />
+        <button type="button" class="btn btn-secondary" v-on:click="setSortAttribute('year')">
+          Sort by Year Released
+        </button>
+        <button type="button" class="btn btn-secondary" v-on:click="setSortAttribute('title')">Sort by Title</button>
       </div>
       <div class="row row-cols-1 row-cols-md-3">
-        <div v-for="movie in filterBy(movies, filter, 'title')" v-bind:key="movie.id" class="col mb-4">
+        <div
+          v-for="movie in filterBy(orderBy(movies, sortAttribute, sortOder), searchTerm, 'title')"
+          v-bind:key="movie.id"
+          class="col mb-4"
+        >
           <div class="card">
             <img :src="movie.image" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">{{ movie.title }}</h5>
               <p class="card-text">{{ movie.plot }}</p>
-              <p class="card-text">Director: {{ movie.director }}</p>
-              <p class="card-text">Released: {{ movie.year }}</p>
+              <p class="card-text">
+                <strong>Director:</strong>
+                {{ movie.director }}
+              </p>
+              <p class="card-text">
+                <strong>Released:</strong>
+                {{ movie.year }}
+              </p>
               <!-- <p class="card-text" v-for="genre in movie.genres" :key="genre.name">{{ genre }}</p> -->
               <p v-if="movie.genres.length > 0">
-                Genre:
+                <strong>Genre:</strong>
                 <span v-for="(genre, index) in movie.genres" :key="genre.name">
                   {{ genre }}
                   <span v-if="index < movie.genres.length - 1">-</span>
@@ -56,8 +71,9 @@ export default {
   data: function() {
     return {
       movies: [],
-      filter: "",
-      sortAttribute: "title",
+      searchTerm: "",
+      sortAttribute: "year",
+      sortOder: 1,
     };
   },
   created: function() {
@@ -66,6 +82,15 @@ export default {
       this.movies = response.data;
     });
   },
-  methods: {},
+  methods: {
+    setSortAttribute: function(attribute) {
+      if (attribute === this.sortAttribute) {
+        this.sortOder = this.sortOder * -1;
+      } else {
+        this.sortOder = 1;
+      }
+      this.sortAttribute = attribute;
+    },
+  },
 };
 </script>
