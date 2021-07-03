@@ -3,7 +3,31 @@
     <div>
       <div class="jumbotron jumbotron-fluid">
         <div class="container" align="center">
-          <h6 class="display-4">Browse Queer Classics</h6>
+          <h6 class="display-4">
+            <div>
+              <span style="color:#ff0000;">B</span>
+              <span style="color:#ff2000;">r</span>
+              <span style="color:#ff4000;">o</span>
+              <span style="color:#ff5f00;">w</span>
+              <span style="color:#ff7f00;">s</span>
+              <span style="color:#fa9a00;">e</span>
+              <span style="color:#f6b600;"></span>
+              <span style="color:#f1d100;">Q</span>
+              <span style="color:#ecec00;">u</span>
+              <span style="color:#b1f100;">e</span>
+              <span style="color:#76f600;">e</span>
+              <span style="color:#3bfa00;">r</span>
+              <span style="color:#00ff00;"></span>
+              <span style="color:#00ff40;">C</span>
+              <span style="color:#00ff80;">l</span>
+              <span style="color:#00ffbf;">a</span>
+              <span style="color:#00ffff;">s</span>
+              <span style="color:#00bfff;">s</span>
+              <span style="color:#0080ff;">i</span>
+              <span style="color:#0040ff;">c</span>
+              <span style="color:#0000ff;">s</span>
+            </div>
+          </h6>
         </div>
       </div>
     </div>

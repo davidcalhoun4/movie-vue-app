@@ -2,7 +2,20 @@
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Queer Flix</a>
+        <a class="navbar-brand" href="/">
+          <div>
+            <span style="color:#ff0000;">Q</span>
+            <span style="color:#ff4000;">u</span>
+            <span style="color:#ff7f00;">e</span>
+            <span style="color:#f3b306;">e</span>
+            <span style="color:#e7e70b;">r</span>
+            <span style="color:#00ff00;"></span>
+            <span style="color:#00ff80;">F</span>
+            <span style="color:#00ffff;">l</span>
+            <span style="color:#0080ff;">i</span>
+            <span style="color:#0000ff;">x</span>
+          </div>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
